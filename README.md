@@ -2,6 +2,8 @@
 
 
 ## OpenAPI
+reference: [baeldung](https://www.baeldung.com/spring-rest-openapi-documentation)
+
 find the OpenAPI descriptions at /v3/api-docs, which is the default path: http://localhost:8080/v3/api-docs
 
 to change the path add/change the following property in properties file
