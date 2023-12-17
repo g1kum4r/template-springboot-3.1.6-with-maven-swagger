@@ -1,18 +1,23 @@
-package com.template.model;
+package com.template.entity;
 
-import java.util.UUID;
+import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
-public class Task {
+@Entity(name = "Task")
+@Table(name = "task")
+public class TaskEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    @JdbcTypeCode(SqlTypes.INTEGER)
     private Long id;
     private String title;
-
     private String description;
 
+    public TaskEntity() {}
 
-    public Task() {
-    }
-
-    public Task(Long id, String title, String description) {
+    public TaskEntity(Long id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
